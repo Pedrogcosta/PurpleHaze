@@ -450,7 +450,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &524378875
 RectTransform:
   m_ObjectHideFlags: 0
@@ -32722,7 +32722,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.76, y: 0.8}
   m_EdgeRadius: 0
 --- !u!1 &1654860338
 GameObject:
@@ -32736,7 +32736,7 @@ GameObject:
   - component: {fileID: 1654860340}
   m_Layer: 0
   m_Name: attackPoint
-  m_TagString: Untagged
+  m_TagString: HitBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33067,6 +33067,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1276970917707455780, guid: 7903287a710698c4baa710dca808204f, type: 3}
+      propertyPath: m_Radius
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 2401570547389487169, guid: 7903287a710698c4baa710dca808204f, type: 3}
       propertyPath: m_RootOrder
       value: 4

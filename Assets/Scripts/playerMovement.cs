@@ -11,6 +11,8 @@ public class playerMovement : MonoBehaviour
 
     public Rigidbody2D rb;
 
+    public GameObject enemyVar;
+
     public Transform spriteTransform;
 
     Vector2 movement;
@@ -27,6 +29,8 @@ public class playerMovement : MonoBehaviour
     void Start()
     {
         spriteTransform = transform.GetChild(0);
+
+        enemyVar = new GameObject();
     }
 
     void Update()
@@ -65,14 +69,10 @@ public class playerMovement : MonoBehaviour
 
 
 
-
-
-
-    private void Attack()
+    IEnumerator wait()
     {
-        animator.SetTrigger("Attack");
-
-        // Atacar
+        
+        yield return new WaitForSeconds(0.3f);
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.transform.position, attackRange, enemyLayer);
         
         // Damage or interact with the hit enemies
@@ -81,7 +81,20 @@ public class playerMovement : MonoBehaviour
             
             // Perform attack action on the enemy
             Debug.Log("Attacked enemy: " + enemy.name);
+            enemyVar = enemy.gameObject;
+            enemyVar.GetComponent<Enemy>().health -=1;
         }
+        Debug.Log("Asa de urubu");
+    }
+
+    private void Attack()
+    {
+        animator.SetTrigger("Attack");
+
+        StartCoroutine(wait());
+
+        // Atacar
+
     }
 
         private void OnDrawGizmosSelected()

@@ -5,19 +5,10 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     private float speed = 1f;
+    public int health = 3;
 
     private Transform playerTransform;
 
-     private void OnCollisionEnter2D(Collision2D collision)
-    {
-        // Check if the collision is with the player object
-        if (collision.gameObject.CompareTag("HitBox"))
-        {
-            // Destroy the game object
-            Debug.Log("Entered");
-            Destroy(gameObject);
-        }
-    }
     // Start is called before the first frame update
     void Start()
     {
@@ -41,6 +32,11 @@ public class Enemy : MonoBehaviour
         
         // Move the enemy towards the player
         transform.position += direction * speed * Time.deltaTime;
+
+
+        if(health == 0){
+            Destroy(gameObject);
+        }
     }
     }
 }
