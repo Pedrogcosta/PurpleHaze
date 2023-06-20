@@ -18,6 +18,10 @@ public class ChangeScene : MonoBehaviour
         SceneManager.LoadScene("MultiplayerMenu");
     }
 
+    public void RegisterScene(){
+        SceneManager.LoadScene("RegisterScene");
+    }
+
     public void LoginScene(){
         SceneManager.LoadScene("LoginScene");
     }

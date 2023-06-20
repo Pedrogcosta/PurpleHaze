@@ -39242,3 +39242,309 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 910.219166 seconds.
+  path: Assets/Scenes/Multiplayer/MultiplayerMenu.unity
+  artifactKey: Guid(8686da680360a1646850f626c8a20ae2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Multiplayer/MultiplayerMenu.unity using Guid(8686da680360a1646850f626c8a20ae2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '48f40702f66f11c399f8b9bf34bc530f') in 0.003481 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 14.562437 seconds.
+  path: Assets/Scenes/Multiplayer/Scripts/Login.cs
+  artifactKey: Guid(44d9f39d798fdfafda9968ebfb343dab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Multiplayer/Scripts/Login.cs using Guid(44d9f39d798fdfafda9968ebfb343dab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.000919 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/scenes/multiplayer/scripts/login.cs in SourceAssetDB has modification time of '2023-06-20T14:28:15Z' while content on disk has modification time of '2023-06-20T14:42:07Z'
+  ERROR: Build asset version error: assets/scenes/multiplayer/scripts/login.cs in SourceAssetDB has modification time of '2023-06-20T14:28:15Z' while content on disk has modification time of '2023-06-20T14:42:07Z'
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.007481 seconds.
+  path: Assets/Scenes/Multiplayer/Scripts/Login.cs
+  artifactKey: Guid(44d9f39d798fdfafda9968ebfb343dab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Multiplayer/Scripts/Login.cs using Guid(44d9f39d798fdfafda9968ebfb343dab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.047431 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/scenes/multiplayer/scripts/login.cs in SourceAssetDB has modification time of '2023-06-20T14:28:15Z' while content on disk has modification time of '2023-06-20T14:42:07Z'
+  ERROR: Build asset version error: assets/scenes/multiplayer/scripts/login.cs in SourceAssetDB has modification time of '2023-06-20T14:28:15Z' while content on disk has modification time of '2023-06-20T14:42:07Z'
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 11.877438 seconds.
+  path: Assets/Scenes/Multiplayer/Scripts/Login.cs
+  artifactKey: Guid(44d9f39d798fdfafda9968ebfb343dab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Multiplayer/Scripts/Login.cs using Guid(44d9f39d798fdfafda9968ebfb343dab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'efa3f81efa94fa2234fd63b05a38d7c5') in 0.000981 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 8.386384 seconds.
+  path: Assets/Scenes/TitleScreen.unity
+  artifactKey: Guid(24a6e27c16f150c4e9b888e02e77e478) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/TitleScreen.unity using Guid(24a6e27c16f150c4e9b888e02e77e478) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f340fab3848f154a5c8d55409d5d767c') in 0.001085 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image /home/davi-i/programs/jrm/PurpleHaze/Library/PackageCache/com.unity.visualscripting@1.8.0/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image /home/davi-i/programs/jrm/PurpleHaze/Library/PackageCache/com.unity.visualscripting@1.8.0/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  2.518 seconds
+Refreshing native plugins compatible for Editor in 224.15 ms, found 1 plugins.
+Native extension for LinuxStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in 45.330 seconds
+Domain Reload Profiling:
+	ReloadAssembly (581ms)
+		BeginReloadAssembly (329ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (31ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (95ms)
+		LoadAllAssembliesAndSetupDomain (1909ms)
+			LoadAssemblies (1128ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (826ms)
+				TypeCache.Initialize (802ms)
+					TypeCache.ScanAssembly (788ms)
+				ResolveRequiredComponents (15ms)
+		FinalizeReload (0ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (0ms)
+			SetupLoadedEditorAssemblies (1073ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (13ms)
+				SetLoadedEditorAssemblies (10ms)
+				RefreshPlugins (0ms)
+				BeforeProcessingInitializeOnLoad (222ms)
+				ProcessInitializeOnLoadAttributes (749ms)
+				ProcessInitializeOnLoadMethodAttributes (67ms)
+				AfterProcessingInitializeOnLoad (12ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (25ms)
+Refreshing native plugins compatible for Editor in 46.02 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4033 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 45 unused Assets / (39.8 KB). Loaded Objects now: 4594.
+Memory consumption went from 129.0 MB to 129.0 MB.
+Total: 7.214755 ms (FindLiveObjects: 0.408404 ms CreateObjectMapping: 0.259632 ms MarkObjects: 6.452315 ms  DeleteObjects: 0.092243 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:AudioImporter_EditorPlatform: 2f0ff77a95e0ac474e3e8eeba4e2f7cb -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image /home/davi-i/programs/jrm/PurpleHaze/Library/PackageCache/com.unity.visualscripting@1.8.0/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image /home/davi-i/programs/jrm/PurpleHaze/Library/PackageCache/com.unity.visualscripting@1.8.0/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  1.923 seconds
+Refreshing native plugins compatible for Editor in 52.69 ms, found 1 plugins.
+Native extension for LinuxStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  2.794 seconds
+Domain Reload Profiling:
+	ReloadAssembly (541ms)
+		BeginReloadAssembly (311ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (32ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (97ms)
+		LoadAllAssembliesAndSetupDomain (1351ms)
+			LoadAssemblies (678ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (750ms)
+				TypeCache.Initialize (740ms)
+					TypeCache.ScanAssembly (728ms)
+				ResolveRequiredComponents (10ms)
+		FinalizeReload (0ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (0ms)
+			SetupLoadedEditorAssemblies (835ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (12ms)
+				SetLoadedEditorAssemblies (10ms)
+				RefreshPlugins (0ms)
+				BeforeProcessingInitializeOnLoad (200ms)
+				ProcessInitializeOnLoadAttributes (543ms)
+				ProcessInitializeOnLoadMethodAttributes (59ms)
+				AfterProcessingInitializeOnLoad (10ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (23ms)
+Refreshing native plugins compatible for Editor in 45.18 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4034 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 45 unused Assets / (39.9 KB). Loaded Objects now: 4598.
+Memory consumption went from 129.3 MB to 129.2 MB.
+Total: 8.863493 ms (FindLiveObjects: 0.749308 ms CreateObjectMapping: 0.656104 ms MarkObjects: 7.332330 ms  DeleteObjects: 0.121188 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:AudioImporter_EditorPlatform: 2f0ff77a95e0ac474e3e8eeba4e2f7cb -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image /home/davi-i/programs/jrm/PurpleHaze/Library/PackageCache/com.unity.visualscripting@1.8.0/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image /home/davi-i/programs/jrm/PurpleHaze/Library/PackageCache/com.unity.visualscripting@1.8.0/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  2.003 seconds
+Refreshing native plugins compatible for Editor in 51.21 ms, found 1 plugins.
+Native extension for LinuxStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  3.025 seconds
+Domain Reload Profiling:
+	ReloadAssembly (566ms)
+		BeginReloadAssembly (312ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (29ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (92ms)
+		LoadAllAssembliesAndSetupDomain (1414ms)
+			LoadAssemblies (707ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (787ms)
+				TypeCache.Initialize (777ms)
+					TypeCache.ScanAssembly (764ms)
+				ResolveRequiredComponents (10ms)
+		FinalizeReload (0ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (0ms)
+			SetupLoadedEditorAssemblies (916ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (19ms)
+				SetLoadedEditorAssemblies (12ms)
+				RefreshPlugins (0ms)
+				BeforeProcessingInitializeOnLoad (221ms)
+				ProcessInitializeOnLoadAttributes (581ms)
+				ProcessInitializeOnLoadMethodAttributes (70ms)
+				AfterProcessingInitializeOnLoad (13ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (27ms)
+Refreshing native plugins compatible for Editor in 44.16 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4034 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 45 unused Assets / (40.9 KB). Loaded Objects now: 4602.
+Memory consumption went from 129.3 MB to 129.2 MB.
+Total: 9.781896 ms (FindLiveObjects: 0.482229 ms CreateObjectMapping: 0.391783 ms MarkObjects: 8.711643 ms  DeleteObjects: 0.193286 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:AudioImporter_EditorPlatform: 2f0ff77a95e0ac474e3e8eeba4e2f7cb -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 425.780046 seconds.
+  path: Assets/Scenes/Multiplayer/Scripts/CadastrarUsuario.cs
+  artifactKey: Guid(8363d1db49653ce4eb8d5b320ca8129a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Multiplayer/Scripts/CadastrarUsuario.cs using Guid(8363d1db49653ce4eb8d5b320ca8129a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '373b6d8c61af978df032d3e9e72e0388') in 0.003432 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.883401 seconds.
+  path: Assets/Scenes/Multiplayer/Scripts/Login.cs
+  artifactKey: Guid(44d9f39d798fdfafda9968ebfb343dab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Multiplayer/Scripts/Login.cs using Guid(44d9f39d798fdfafda9968ebfb343dab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e2e9ba8f0ebc7daccc161e4ce872182d') in 0.001271 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image /home/davi-i/programs/jrm/PurpleHaze/Library/PackageCache/com.unity.visualscripting@1.8.0/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image /home/davi-i/programs/jrm/PurpleHaze/Library/PackageCache/com.unity.visualscripting@1.8.0/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  1.870 seconds
+Refreshing native plugins compatible for Editor in 47.36 ms, found 1 plugins.
+Native extension for LinuxStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  3.054 seconds
+Domain Reload Profiling:
+	ReloadAssembly (503ms)
+		BeginReloadAssembly (307ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (37ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (89ms)
+		LoadAllAssembliesAndSetupDomain (1341ms)
+			LoadAssemblies (687ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (723ms)
+				TypeCache.Initialize (713ms)
+					TypeCache.ScanAssembly (701ms)
+				ResolveRequiredComponents (10ms)
+		FinalizeReload (0ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (0ms)
+			SetupLoadedEditorAssemblies (968ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (15ms)
+				SetLoadedEditorAssemblies (9ms)
+				RefreshPlugins (0ms)
+				BeforeProcessingInitializeOnLoad (209ms)
+				ProcessInitializeOnLoadAttributes (661ms)
+				ProcessInitializeOnLoadMethodAttributes (63ms)
+				AfterProcessingInitializeOnLoad (11ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (24ms)
+Refreshing native plugins compatible for Editor in 44.88 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4033 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 45 unused Assets / (40.0 KB). Loaded Objects now: 4606.
+Memory consumption went from 129.0 MB to 129.0 MB.
+Total: 8.452415 ms (FindLiveObjects: 0.473382 ms CreateObjectMapping: 0.408251 ms MarkObjects: 7.478330 ms  DeleteObjects: 0.089975 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:AudioImporter_EditorPlatform: 2f0ff77a95e0ac474e3e8eeba4e2f7cb -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 123.785337 seconds.
+  path: Assets/Scenes/Multiplayer/LoginScene.unity
+  artifactKey: Guid(eb622ed27def8ddca9b0dcd7b455838a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Multiplayer/LoginScene.unity using Guid(eb622ed27def8ddca9b0dcd7b455838a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'be8ad7caed9f33b28f72d21704e62bf8') in 0.005305 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0

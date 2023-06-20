@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.SceneManagement;
 
 using System;
 using System.Collections;
@@ -57,6 +58,7 @@ public class Login : MonoBehaviour
         {
             Debug.Log("POST request sent successfully");
             Debug.Log(request.downloadHandler.text);
+            SceneManager.LoadScene("MultiplayerMenu");
         }
         else
         {

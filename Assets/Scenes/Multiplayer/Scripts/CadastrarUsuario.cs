@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.SceneManagement;
 
 using System;
 using System.Collections;
@@ -59,6 +60,7 @@ public class CadastrarUsuario : MonoBehaviour
         if (request.result == UnityWebRequest.Result.Success)
         {
             Debug.Log("POST request sent successfully");
+            SceneManager.LoadScene("LoginScene");
         }
         else
         {
