@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Networking;
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -10,35 +11,35 @@ using UnityEngine.UI;
 public class CadastrarUsuario : MonoBehaviour
 {
 
-
     private const string postUrl = "http://localhost:3000/register"; // Replace with your actual API endpoint URL
 
-
-     public Button cadastrarButton;
      public TextMeshProUGUI emailField;
      public TextMeshProUGUI usernameField;
      public TextMeshProUGUI passwordField;
 
+     [Serializable]
+     public class Usuario
+     {
+         public string email;
+         public string username;
+         public string password;
+     }
 
-
-
-    public void chamarPorra(){
-        
+    public void Cadastrar()
+    {
         StartCoroutine(SendPostRequest());
     }
 
     public IEnumerator SendPostRequest()
     {
-        Debug.Log("Mande noticias do mundo de lá, diz quem fica");
         // Create a dictionary to hold your JSON data
-        Dictionary<string, string> jsonData = new Dictionary<string, string>();
-
-        jsonData.Add("email", emailField.text);
-        jsonData.Add("username",  usernameField.text);
-        jsonData.Add("password",  passwordField.text);
+        Usuario usuario = new Usuario();
+        usuario.email = emailField.text;
+        usuario.username = usernameField.text;
+        usuario.password = passwordField.text;
 
         // Convert the dictionary to a JSON string
-        string json = JsonUtility.ToJson(jsonData);
+        string json = JsonUtility.ToJson(usuario);
 
         // Create a new UnityWebRequest
         UnityWebRequest request = UnityWebRequest.PostWwwForm(postUrl, "POST");
@@ -63,11 +64,5 @@ public class CadastrarUsuario : MonoBehaviour
         {
             Debug.LogError("Error sending POST request: " + request.error);
         }
-    }
-
-        public void Start(){
-
-        
-       
     }
 }
