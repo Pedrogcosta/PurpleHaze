@@ -24,6 +24,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Multiplayer/JoinGame.unity
     guid: 64b19e4c22ff54e41abb771475a822fc
   - enabled: 1
-    path: Assets/Scenes/Multiplayer/LoginScene.unity
+    path: Assets/Scenes/Multiplayer/RegisterScene.unity
     guid: e20dc9c00bb6ae84f8b9367505dbf0a6
   m_configObjects: {}
