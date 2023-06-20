@@ -750,6 +750,7 @@ MonoBehaviour:
   animator: {fileID: 967438191}
   moveSpeed: 5
   rb: {fileID: 1559604443}
+  enemyVar: {fileID: 0}
   spriteTransform: {fileID: 1559604445}
   andando: 0
   attackPoint: {fileID: 1654860340}

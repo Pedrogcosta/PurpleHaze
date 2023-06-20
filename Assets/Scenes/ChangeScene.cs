@@ -11,7 +11,7 @@ public class ChangeScene : MonoBehaviour
     }
 
     public void GameScene(){
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Game");
     }
 
     public void PlazaScene(){
