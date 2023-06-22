@@ -1,26 +1,47 @@
+using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
+
 using SocketIOClient;
+using TMPro;
 
 public class MultiplayerMenu : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        Debug.Log("I'm in multiplayer menu");
+    public TextMeshProUGUI chat;
+    public TMP_InputField field;
+    public SocketIOUnity socket;
+
+     [Serializable]
+     public class Chat
+     {
+         public string username;
+         public string message;
+     }
+
+     void Awake() {
         GameObject socketManager = GameObject.Find("SocketManager");
         if (socketManager != null) {
-            SocketIOUnity socket = socketManager.GetComponent<LoadManager>().socket;
-            socket.On("chat", (e) => {
-                Debug.Log("chat: " + e);
-            });
+            socket = socketManager.GetComponent<LoadManager>().socket;
+        } else {
+            SceneManager.LoadScene("LoginScene");
         }
+     }
+
+    void Start()
+    {
+        socket.OnUnityThread("chat", (response) => {
+            Chat chatMessage = response.GetValue<Chat>();
+            chat.text += '\n' + chatMessage.username + ": " + chatMessage.message;
+        });
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void SendChatMessage() {
+        socket.Emit("chat", field.text);
+        field.text = "";
+        field.Select();
     }
 }
