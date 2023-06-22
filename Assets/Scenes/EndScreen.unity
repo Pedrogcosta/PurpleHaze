@@ -228,6 +228,7 @@ GameObject:
   - component: {fileID: 365434776}
   - component: {fileID: 365434775}
   - component: {fileID: 365434778}
+  - component: {fileID: 365434779}
   m_Layer: 5
   m_Name: Retry
   m_TagString: Untagged
@@ -300,9 +301,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 365434778}
-        m_TargetAssemblyTypeName: ToHome, Assembly-CSharp
-        m_MethodName: IniciarGame
+      - m_Target: {fileID: 365434779}
+        m_TargetAssemblyTypeName: ChangeScene, Assembly-CSharp
+        m_MethodName: MenuScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -360,6 +361,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b7019dbb47c47e040963defbc05abfb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &365434779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 365434773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81b6d1f732c6100419a9bca2dd15f158, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &444915621

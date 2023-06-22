@@ -7,15 +7,24 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine.UI;
+using Newtonsoft.Json.Linq;
 
 
 public class Login : MonoBehaviour
 {
 
-    private const string postUrl = "http://localhost:3000/login"; // Replace with your actual API endpoint URL
+    private const string postUrl = "http://localhost:3000/login";
 
      public TextMeshProUGUI usernameField;
      public TextMeshProUGUI passwordField;
+     public static string token = null;
+
+     public void Start() {
+        Debug.Log(token);
+        if (token != null && token != "") {
+            SceneManager.LoadScene("Loading");
+        }
+     }
 
      [Serializable]
      public class Usuario
@@ -57,12 +66,23 @@ public class Login : MonoBehaviour
         if (request.result == UnityWebRequest.Result.Success)
         {
             Debug.Log("POST request sent successfully");
-            Debug.Log(request.downloadHandler.text);
-            SceneManager.LoadScene("MultiplayerMenu");
+            JObject response = JObject.Parse(request.downloadHandler.text);
+            token = response.GetValue("token").ToString();
+            SceneManager.LoadScene("Loading");
         }
         else
         {
             Debug.LogError("Error sending POST request: " + request.error);
         }
+    }
+
+    void OnEnable() {
+        Debug.Log("running on enable");
+        token = PlayerPrefs.GetString("token", null);
+    }
+
+    void OnDisable() {
+        Debug.Log("running on disable");
+        PlayerPrefs.SetString("token", token);
     }
 }
