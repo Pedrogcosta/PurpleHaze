@@ -32,4 +32,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Multiplayer/Loading.unity
     guid: e3b4dceea83df5f14966d46915a9217f
+  - enabled: 1
+    path: Assets/Scenes/Multiplayer/GameRoom.unity
+    guid: 3ea52bc248234b943acadf6f6e8fb840
+  - enabled: 1
+    path: Assets/Scenes/Multiplayer/MultiplayerGame.unity
+    guid: 6ece188153ac5732ca3a0b7c54668ba6
+  - enabled: 1
+    path: Assets/Scenes/Multiplayer/GameOver.unity
+    guid: 744b1dc30ad3b89c384613f9a52fc574
   m_configObjects: {}

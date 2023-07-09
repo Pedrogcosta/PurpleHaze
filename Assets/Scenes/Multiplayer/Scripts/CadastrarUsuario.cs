@@ -14,9 +14,9 @@ public class CadastrarUsuario : MonoBehaviour
 
     private const string postUrl = "http://localhost:3000/register"; // Replace with your actual API endpoint URL
 
-     public TextMeshProUGUI emailField;
-     public TextMeshProUGUI usernameField;
-     public TextMeshProUGUI passwordField;
+     public TMP_InputField emailField;
+     public TMP_InputField usernameField;
+     public TMP_InputField passwordField;
 
      [Serializable]
      public class Usuario

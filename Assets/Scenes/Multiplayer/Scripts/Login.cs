@@ -15,8 +15,8 @@ public class Login : MonoBehaviour
 
     private const string postUrl = "http://localhost:3000/login";
 
-     public TextMeshProUGUI usernameField;
-     public TextMeshProUGUI passwordField;
+     public TMP_InputField usernameField;
+     public TMP_InputField passwordField;
      public static string token = null;
 
      public void Start() {

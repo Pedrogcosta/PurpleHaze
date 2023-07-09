@@ -5,25 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class ChangeScene : MonoBehaviour
 {
-    public void MenuScene()
+    public string scene;
+    public LoadSceneMode mode = LoadSceneMode.Single;
+    public void LoadScene()
     {
-        SceneManager.LoadScene("TitleScreen");
+        SceneManager.LoadScene(scene, mode);
     }
-
-    public void GameScene(){
-        SceneManager.LoadScene("Game");
-    }
-
-    public void PlazaScene(){
-        SceneManager.LoadScene("MultiplayerMenu");
-    }
-
-    public void RegisterScene(){
-        SceneManager.LoadScene("RegisterScene");
-    }
-
-    public void LoginScene(){
-        SceneManager.LoadScene("LoginScene");
-    }
-
 }

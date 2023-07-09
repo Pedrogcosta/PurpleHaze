@@ -123,39 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &182517369
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 182517371}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &182517371
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 182517369}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 960, y: 540, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 541348645}
-  - {fileID: 381196248}
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &192812988
 GameObject:
   m_ObjectHideFlags: 0
@@ -559,53 +526,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 367309908}
   m_CullTransparentMesh: 1
---- !u!1 &381196247
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 381196248}
-  - component: {fileID: 381196249}
-  m_Layer: 0
-  m_Name: Script
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &381196248
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 381196247}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 182517371}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &381196249
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 381196247}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8363d1db49653ce4eb8d5b320ca8129a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  emailField: {fileID: 0}
-  usernameField: {fileID: 0}
-  passwordField: {fileID: 0}
 --- !u!1 &541348641
 GameObject:
   m_ObjectHideFlags: 0
@@ -707,8 +627,8 @@ RectTransform:
   - {fileID: 1783844715}
   - {fileID: 676447810}
   - {fileID: 911359296}
-  m_Father: {fileID: 182517371}
-  m_RootOrder: -1
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1146,7 +1066,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 911359300}
         m_TargetAssemblyTypeName: ChangeScene, Assembly-CSharp
-        m_MethodName: RegisterScene
+        m_MethodName: LoadScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1206,6 +1126,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81b6d1f732c6100419a9bca2dd15f158, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scene: RegisterScene
+  mode: 0
 --- !u!1 &912387534
 GameObject:
   m_ObjectHideFlags: 0
@@ -1787,8 +1709,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44d9f39d798fdfafda9968ebfb343dab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  usernameField: {fileID: 1877584090}
-  passwordField: {fileID: 1826664444}
+  usernameField: {fileID: 1324179865}
+  passwordField: {fileID: 367309910}
 --- !u!1 &1826217211
 GameObject:
   m_ObjectHideFlags: 0
@@ -1842,6 +1764,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81b6d1f732c6100419a9bca2dd15f158, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scene: TitleScene
+  mode: 0
 --- !u!114 &1826217214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1888,7 +1812,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1826217213}
         m_TargetAssemblyTypeName: ChangeScene, Assembly-CSharp
-        m_MethodName: MenuScene
+        m_MethodName: LoadScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
