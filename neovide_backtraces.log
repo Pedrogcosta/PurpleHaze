@@ -286,3 +286,165 @@
   14: <unknown>
   15: <unknown>
 
+2023-07-09 22:57:35 - Neovide panicked with the message 'Could not setup setting notifier for cursor_vfx_mode: Error sending request 'nvim_command''. (File: src/error_handling.rs; Line: 5, Column: 5)
+   0: <unknown>
+   1: <unknown>
+   2: <unknown>
+   3: <unknown>
+   4: <unknown>
+   5: <unknown>
+   6: <unknown>
+   7: <unknown>
+   8: <unknown>
+   9: <unknown>
+  10: <unknown>
+  11: <unknown>
+  12: <unknown>
+  13: <unknown>
+  14: <unknown>
+  15: <unknown>
+
+2023-07-10 00:07:52 - Neovide panicked with the message 'Focus Gained Failed: DecodeError(ReaderError(Custom { kind: UnexpectedEof, error: "EOF" }), "nvim_command")'. (File: src/bridge/ui_commands.rs; Line: 147, Column: 18)
+   0: <unknown>
+   1: <unknown>
+   2: <unknown>
+   3: <unknown>
+   4: <unknown>
+   5: <unknown>
+   6: <unknown>
+   7: <unknown>
+   8: <unknown>
+   9: <unknown>
+  10: <unknown>
+  11: <unknown>
+  12: <unknown>
+  13: <unknown>
+  14: <unknown>
+  15: <unknown>
+
+2023-07-10 16:49:32 - Neovide panicked with the message 'Could not setup setting notifier for padding_top: Error sending request 'nvim_command''. (File: src/error_handling.rs; Line: 5, Column: 5)
+   0: <unknown>
+   1: <unknown>
+   2: <unknown>
+   3: <unknown>
+   4: <unknown>
+   5: <unknown>
+   6: <unknown>
+   7: <unknown>
+   8: <unknown>
+   9: <unknown>
+  10: <unknown>
+  11: <unknown>
+  12: <unknown>
+  13: <unknown>
+  14: <unknown>
+  15: <unknown>
+
+2023-07-10 17:15:47 - Neovide panicked with the message 'Could not setup setting notifier for padding_bottom: Error sending request 'nvim_command''. (File: src/error_handling.rs; Line: 5, Column: 5)
+   0: <unknown>
+   1: <unknown>
+   2: <unknown>
+   3: <unknown>
+   4: <unknown>
+   5: <unknown>
+   6: <unknown>
+   7: <unknown>
+   8: <unknown>
+   9: <unknown>
+  10: <unknown>
+  11: <unknown>
+  12: <unknown>
+  13: <unknown>
+  14: <unknown>
+  15: <unknown>
+
+2023-07-10 18:34:43 - Neovide panicked with the message 'Could not setup setting notifier for padding_top: Error sending request 'nvim_command''. (File: src/error_handling.rs; Line: 5, Column: 5)
+   0: <unknown>
+   1: <unknown>
+   2: <unknown>
+   3: <unknown>
+   4: <unknown>
+   5: <unknown>
+   6: <unknown>
+   7: <unknown>
+   8: <unknown>
+   9: <unknown>
+  10: <unknown>
+  11: <unknown>
+  12: <unknown>
+  13: <unknown>
+  14: <unknown>
+  15: <unknown>
+
+2023-07-10 19:12:21 - Neovide panicked with the message 'Could not setup setting notifier for input_macos_alt_is_meta: Error sending request 'nvim_command''. (File: src/error_handling.rs; Line: 5, Column: 5)
+   0: <unknown>
+   1: <unknown>
+   2: <unknown>
+   3: <unknown>
+   4: <unknown>
+   5: <unknown>
+   6: <unknown>
+   7: <unknown>
+   8: <unknown>
+   9: <unknown>
+  10: <unknown>
+  11: <unknown>
+  12: <unknown>
+  13: <unknown>
+  14: <unknown>
+  15: <unknown>
+
+2023-07-11 02:30:03 - Neovide panicked with the message 'Could not setup setting notifier for input_use_logo: Error sending request 'nvim_command''. (File: src/error_handling.rs; Line: 5, Column: 5)
+   0: <unknown>
+   1: <unknown>
+   2: <unknown>
+   3: <unknown>
+   4: <unknown>
+   5: <unknown>
+   6: <unknown>
+   7: <unknown>
+   8: <unknown>
+   9: <unknown>
+  10: <unknown>
+  11: <unknown>
+  12: <unknown>
+  13: <unknown>
+  14: <unknown>
+  15: <unknown>
+
+2023-07-11 02:47:07 - Neovide panicked with the message 'Focus Gained Failed: DecodeError(ReaderError(Custom { kind: UnexpectedEof, error: "EOF" }), "nvim_command")'. (File: src/bridge/ui_commands.rs; Line: 147, Column: 18)
+   0: <unknown>
+   1: <unknown>
+   2: <unknown>
+   3: <unknown>
+   4: <unknown>
+   5: <unknown>
+   6: <unknown>
+   7: <unknown>
+   8: <unknown>
+   9: <unknown>
+  10: <unknown>
+  11: <unknown>
+  12: <unknown>
+  13: <unknown>
+  14: <unknown>
+  15: <unknown>
+
+2023-07-11 04:30:29 - Neovide panicked with the message 'Could not setup setting notifier for cursor_animate_command_line: Error sending request 'nvim_command''. (File: src/error_handling.rs; Line: 5, Column: 5)
+   0: <unknown>
+   1: <unknown>
+   2: <unknown>
+   3: <unknown>
+   4: <unknown>
+   5: <unknown>
+   6: <unknown>
+   7: <unknown>
+   8: <unknown>
+   9: <unknown>
+  10: <unknown>
+  11: <unknown>
+  12: <unknown>
+  13: <unknown>
+  14: <unknown>
+  15: <unknown>
+

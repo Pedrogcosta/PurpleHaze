@@ -8,15 +8,27 @@ using TMPro;
 
 public class MultiplayerGame : MonoBehaviour
 {
-    public TMP_Text lifeDisplay;
     public GameObject playerModel;
     public GameObject enemyModel;
+    public GameObject coinModel;
+    public GameObject heartModel;
+    public Transform heartPosition;
+    public GameObject shoper;
+    public GameObject civilian;
+    public GameObject dialogueBox;
+    public GameObject optionsBox;
+    public GameObject shop;
+
     private Dictionary<string, PlayerObject> players = new Dictionary<string, PlayerObject>();
     private Dictionary<int, GameObject> enemies = new Dictionary<int, GameObject>();
+    private Dictionary<int, GameObject> coins = new Dictionary<int, GameObject>();
+    private List<GameObject> hearts = new List<GameObject>();
+    private bool canMove = true;
 
     private class PlayerObject {
         public GameObject gameObject;
         public bool isAttacking;
+        public bool canMove;
     }
 
     [Serializable]
@@ -44,6 +56,9 @@ public class MultiplayerGame : MonoBehaviour
     public class Objects {
         public Dictionary<string, Player> players;
         public Dictionary<int, Enemy> enemies;
+        public Dictionary<int, Position> coins;
+        public Position shoper;
+        public Position mission;
     }
 
     // Start is called before the first frame update
@@ -97,9 +112,7 @@ public class MultiplayerGame : MonoBehaviour
                 if (time.HasValue) {
                     if (!playerObject.isAttacking) {
                         playerObject.isAttacking = true;
-                        Debug.Log("running animation");
                         var animationTime = time.Value - currentTime;
-                        Debug.Log(animationTime);
                         animator.SetFloat("AttackSpeed", 350 / animationTime);
                         animator.SetTrigger("Attack");
                     }
@@ -108,7 +121,19 @@ public class MultiplayerGame : MonoBehaviour
                 }
 
                 if (player.Key == SocketManager.user.username) {
-                    lifeDisplay.text = string.Concat(Enumerable.Repeat("S2", player.Value.health));
+                    for (int i = hearts.Count - 1; i >= player.Value.health; i--) {
+                        DestroyImmediate(hearts[i]);
+                        hearts.RemoveAt(i);
+                    }
+
+                    Vector3 spawnPosition = new Vector3(heartPosition.position.x + hearts.Count * 35, heartPosition.position.y, 0);
+
+                    for (int i = 0; i < player.Value.health - hearts.Count; i++) {
+                        var heart = Instantiate(heartModel, spawnPosition, Quaternion.identity);
+                        heart.transform.SetParent(heartPosition);
+                        spawnPosition.x += 35;
+                        hearts.Add(heart);
+                    }
                 }
             }
 
@@ -116,6 +141,34 @@ public class MultiplayerGame : MonoBehaviour
                 var enemyObject = enemies.GetOrAdd(enemy.Key, () => Instantiate(enemyModel));
                 enemyObject.transform.position = new Vector3(enemy.Value.position.x, enemy.Value.position.y);
             }
+
+            foreach (var coin in objects.coins) {
+                var coinObject = coins.GetOrAdd(coin.Key, () => Instantiate(coinModel));
+                coinObject.transform.position = new Vector3(coin.Value.x, coin.Value.y);
+            }
+
+            if (objects.shoper != null) {
+                var position = objects.shoper;
+                shoper.transform.position = new Vector3(position.x, position.y, 0);
+                shoper.SetActive(true);
+            } else {
+                shoper.SetActive(false);
+            }
+
+            if (objects.mission != null) {
+                var position = objects.mission;
+                civilian.transform.position = new Vector3(position.x, position.y, 0);
+                civilian.SetActive(true);
+            } else {
+                civilian.SetActive(false);
+            }
+       });
+
+       SocketManager.Socket.OnUnityThread("playerHurt", (response) => {
+            var username = response.GetValue<string>();
+            var spriteRenderer = players[username].gameObject.GetComponent<SpriteRenderer>();
+            spriteRenderer.color = Color.red;
+            StartCoroutine(ResetSprite(spriteRenderer));
        });
 
        SocketManager.Socket.OnUnityThread("enemyHurt", (response) => {
@@ -125,8 +178,57 @@ public class MultiplayerGame : MonoBehaviour
             StartCoroutine(ResetSprite(spriteRenderer));
        });
 
-       SocketManager.Socket.OnUnityThread("levelWon", (response) => {
-            response.CallbackAsync("maxHealth");
+       SocketManager.Socket.OnUnityThread("enemyKilled", (response) => {
+            var id = response.GetValue<int>();
+            var enemy = enemies[id];
+            enemies.Remove(id);
+            Destroy(enemy);
+       });
+
+       SocketManager.Socket.OnUnityThread("mission", (response) => {
+            canMove = false;
+
+            var monsters = response.GetValue<int>();
+            ShowDialogue(new[] {
+                "HELP!!!! There are " + monsters + " monsters attacking me!!!",
+                "I think they are stronger than last time...",
+            }, () => {
+                ShowOptions(new []{
+                    "Help him now",
+                    "Just a moment"
+                }, (option) => {
+                    if (option == 0) {
+                        response.CallbackAsync("start");
+                    } else {
+                        response.CallbackAsync("cancel");
+                    }
+                    canMove = true;
+                });
+            });
+       });
+
+       SocketManager.Socket.OnUnityThread("shop", (response) => {
+            canMove = false;
+            Shop.response = response;
+            Shop.onClose = () => {
+                canMove = true;
+            };
+            shop.SetActive(true);
+       });
+
+       SocketManager.Socket.OnUnityThread("coinCollected", (response) => {
+            var id = response.GetValue<int>();
+            var coin = coins[id];
+            coins.Remove(id);
+            Destroy(coin);
+       });
+
+       SocketManager.Socket.OnUnityThread("endLevel", (response) => {
+            canMove = false;
+            ShowDialogue(new[] {
+                "THANK YOU!!",
+                "I think we're safe for now",
+            }, () => { canMove = true; });
        });
 
        SocketManager.Socket.OnUnityThread("gameOver", (response) => {
@@ -138,23 +240,39 @@ public class MultiplayerGame : MonoBehaviour
     IEnumerator ResetSprite(SpriteRenderer spriteRenderer) {
         yield return new WaitForSeconds(1);
 
-        spriteRenderer.color = Color.white;
+        if (spriteRenderer != null) {
+            spriteRenderer.color = Color.white;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        var x = Input.GetAxisRaw("Horizontal");
-        var y = Input.GetAxisRaw("Vertical");
-        var movement = new Position {
-          x = x,
-          y = y
-        };
+        if (canMove) {
+            var x = Input.GetAxisRaw("Horizontal");
+            var y = Input.GetAxisRaw("Vertical");
+            var movement = new Position {
+              x = x,
+              y = y
+            };
 
-        SocketManager.Socket.Emit("move", movement);
+            SocketManager.Socket.Emit("move", movement);
 
-        if (Input.GetKeyDown(KeyCode.Space)) {
-            SocketManager.Socket.Emit("attack");
+            if (Input.GetKeyDown(KeyCode.Space)) {
+                SocketManager.Socket.Emit("attack");
+            }
         }
+    }
+
+    void ShowDialogue(string[] text, Action onFinish = null) {
+        Dialogue.text = text;
+        Dialogue.onFinish = onFinish;
+        dialogueBox.SetActive(true);
+    }
+
+    void ShowOptions(string[] options, Action<int> onPress = null) {
+        Options.options = options;
+        Options.onPress = onPress;
+        optionsBox.SetActive(true);
     }
 }

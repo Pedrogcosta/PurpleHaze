@@ -12,13 +12,13 @@ public class GameOver : MonoBehaviour
     public async void Retry()
     {
         await response.CallbackAsync("restart");
-        SceneManager.UnloadScene("GameOver");
+        SceneManager.UnloadSceneAsync("GameOver");
     }
 
     // Update is called once per frame
     public async void Exit()
     {
-        response.CallbackAsync("leave");
+        await response.CallbackAsync("leave");
         SceneManager.LoadScene("MultiplayerMenu");
     }
 }

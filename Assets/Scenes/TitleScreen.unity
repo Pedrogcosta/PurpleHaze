@@ -510,7 +510,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81b6d1f732c6100419a9bca2dd15f158, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scene: LoginScene
+  scene: Login
+  mode: 0
 --- !u!1 &948901855
 GameObject:
   m_ObjectHideFlags: 0
@@ -735,6 +736,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scene: Game
+  mode: 0
 --- !u!1 &1435259889
 GameObject:
   m_ObjectHideFlags: 0

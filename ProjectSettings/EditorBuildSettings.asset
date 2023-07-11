@@ -24,10 +24,10 @@ EditorBuildSettings:
     path: Assets/Scenes/Multiplayer/JoinGame.unity
     guid: 64b19e4c22ff54e41abb771475a822fc
   - enabled: 1
-    path: Assets/Scenes/Multiplayer/RegisterScene.unity
+    path: Assets/Scenes/Multiplayer/Register.unity
     guid: e20dc9c00bb6ae84f8b9367505dbf0a6
   - enabled: 1
-    path: Assets/Scenes/Multiplayer/LoginScene.unity
+    path: Assets/Scenes/Multiplayer/Login.unity
     guid: eb622ed27def8ddca9b0dcd7b455838a
   - enabled: 1
     path: Assets/Scenes/Multiplayer/Loading.unity
@@ -41,4 +41,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Multiplayer/GameOver.unity
     guid: 744b1dc30ad3b89c384613f9a52fc574
+  - enabled: 1
+    path: Assets/Scenes/Multiplayer/Shop.unity
+    guid: f7422c5e6d1cfefed935758a9dd8059c
   m_configObjects: {}

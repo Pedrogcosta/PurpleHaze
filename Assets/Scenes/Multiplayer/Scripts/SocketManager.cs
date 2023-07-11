@@ -30,7 +30,7 @@ public class SocketManager
     public static void Connect(Action callback = null) {
         string token = PlayerPrefs.GetString("token", null);
         if (token == null && token == "") {
-            SceneManager.LoadScene("LoginScene");
+            SceneManager.LoadScene("Login");
         }
 
         var parts = token.Split('.');
@@ -84,7 +84,7 @@ public class SocketManager
 
             UnityThread.executeInUpdate(() => {
                 PlayerPrefs.DeleteKey("token");
-                SceneManager.LoadScene("LoginScene");
+                SceneManager.LoadScene("Login");
             });
         };
         socket.OnUnityThread("startGame", (response) => {

@@ -31,14 +31,12 @@ public class JoinGame : MonoBehaviour
 
         SocketManager.Socket.Emit("joinGame", response => {
              var result = response.GetValue<Result>();
-             Debug.Log(result.result);
              
              UnityThread.executeInUpdate(() => {
                   if (result.result == "joined") {
                        CreateGame.created = false;
                        SceneManager.LoadScene("GameRoom");
                   } else if (result.result == "error") {
-                       Debug.Log(result.reason);
                        error.text = result.reason;
                   }
              });

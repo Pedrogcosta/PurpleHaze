@@ -25,13 +25,15 @@ public class Chat : MonoBehaviour
     {
         SocketManager.Socket.OnUnityThread("chat", (response) => {
             var chatMessage = response.GetValue<ChatMessage>();
-            chat.text += '\n' + chatMessage.username + ": " + chatMessage.message;
+            chat.text += "<b>" + chatMessage.username + "</b>: " + chatMessage.message + '\n';
         });
     }
 
     public void SendChatMessage() {
         SocketManager.Socket.Emit("chat", field.text);
-        field.text = "";
-        field.Select();
+        UnityThread.executeInUpdate(() => {
+            field.text = "";
+            field.Select();
+        });
     }
 }

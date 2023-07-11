@@ -60,7 +60,7 @@ public class CadastrarUsuario : MonoBehaviour
         if (request.result == UnityWebRequest.Result.Success)
         {
             Debug.Log("POST request sent successfully");
-            SceneManager.LoadScene("LoginScene");
+            SceneManager.LoadScene("Login");
         }
         else
         {
