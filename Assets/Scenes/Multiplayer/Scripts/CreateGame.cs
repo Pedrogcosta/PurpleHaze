@@ -41,6 +41,7 @@ public class CreateGame : MonoBehaviour
              UnityThread.executeInUpdate(() => {
                   if (result.result == "created") {
                        created = true;
+                       GameRoom.gameName = game.name;
                        SceneManager.LoadScene("GameRoom");
                   } else {
                        Debug.Log(result.reason);

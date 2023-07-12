@@ -35,6 +35,7 @@ public class JoinGame : MonoBehaviour
              UnityThread.executeInUpdate(() => {
                   if (result.result == "joined") {
                        CreateGame.created = false;
+                       GameRoom.gameName = game.name;
                        SceneManager.LoadScene("GameRoom");
                   } else if (result.result == "error") {
                        error.text = result.reason;

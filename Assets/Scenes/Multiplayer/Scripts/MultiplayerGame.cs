@@ -12,6 +12,8 @@ public class MultiplayerGame : MonoBehaviour
     public GameObject enemyModel;
     public GameObject coinModel;
     public GameObject heartModel;
+    public GameObject gooModel;
+    public GameObject boss;
     public Transform heartPosition;
     public GameObject shoper;
     public GameObject civilian;
@@ -22,13 +24,13 @@ public class MultiplayerGame : MonoBehaviour
     private Dictionary<string, PlayerObject> players = new Dictionary<string, PlayerObject>();
     private Dictionary<int, GameObject> enemies = new Dictionary<int, GameObject>();
     private Dictionary<int, GameObject> coins = new Dictionary<int, GameObject>();
+    private Dictionary<int, GameObject> goo = new Dictionary<int, GameObject>();
     private List<GameObject> hearts = new List<GameObject>();
     private bool canMove = true;
 
     private class PlayerObject {
         public GameObject gameObject;
         public bool isAttacking;
-        public bool canMove;
     }
 
     [Serializable]
@@ -44,6 +46,7 @@ public class MultiplayerGame : MonoBehaviour
         public string facing;
         public bool invincible;
         public long? endAttackTime;
+        public bool stuck;
     }
 
     [Serializable]
@@ -59,6 +62,8 @@ public class MultiplayerGame : MonoBehaviour
         public Dictionary<int, Position> coins;
         public Position shoper;
         public Position mission;
+        public Position boss;
+        public Dictionary<int, Position> goo;
     }
 
     // Start is called before the first frame update
@@ -147,6 +152,11 @@ public class MultiplayerGame : MonoBehaviour
                 coinObject.transform.position = new Vector3(coin.Value.x, coin.Value.y);
             }
 
+            foreach (var newGoo in objects.goo) {
+                var gooObject = goo.GetOrAdd(newGoo.Key, () => Instantiate(gooModel));
+                gooObject.transform.position = new Vector3(newGoo.Value.x, newGoo.Value.y);
+            }
+
             if (objects.shoper != null) {
                 var position = objects.shoper;
                 shoper.transform.position = new Vector3(position.x, position.y, 0);
@@ -161,6 +171,14 @@ public class MultiplayerGame : MonoBehaviour
                 civilian.SetActive(true);
             } else {
                 civilian.SetActive(false);
+            }
+
+            if (objects.boss != null) {
+                var position = objects.boss;
+                boss.transform.position = new Vector3(position.x, position.y, 0);
+                boss.SetActive(true);
+            } else {
+                boss.SetActive(false);
             }
        });
 
@@ -223,6 +241,13 @@ public class MultiplayerGame : MonoBehaviour
             Destroy(coin);
        });
 
+       SocketManager.Socket.OnUnityThread("gooDestroyed", (response) => {
+            var id = response.GetValue<int>();
+            var gooDestroy = goo[id];
+            goo.Remove(id);
+            Destroy(gooDestroy);
+       });
+
        SocketManager.Socket.OnUnityThread("endLevel", (response) => {
             canMove = false;
             ShowDialogue(new[] {
@@ -234,6 +259,25 @@ public class MultiplayerGame : MonoBehaviour
        SocketManager.Socket.OnUnityThread("gameOver", (response) => {
             GameOver.response = response;
             SceneManager.LoadScene("GameOver", LoadSceneMode.Additive);
+       });
+
+       SocketManager.Socket.OnUnityThread("bossEnraged", (response) => {
+            var animator = boss.GetComponent<Animator>();
+            animator.SetTrigger("TransformacaoInicio");
+       });
+
+       SocketManager.Socket.OnUnityThread("bossHurt", (response) => {
+            var spriteRenderer = boss.GetComponent<SpriteRenderer>();
+            spriteRenderer.color = Color.red;
+            StartCoroutine(ResetSprite(spriteRenderer));
+       });
+
+       SocketManager.Socket.OnUnityThread("bossKilled", (response) => {
+           Destroy(boss);
+       });
+
+       SocketManager.Socket.OnUnityThread("endGame", (response) => {
+           SceneManager.LoadScene("GameWon");
        });
     }
 

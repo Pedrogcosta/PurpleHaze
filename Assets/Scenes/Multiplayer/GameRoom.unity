@@ -588,9 +588,8 @@ GameObject:
   - component: {fileID: 372312332}
   - component: {fileID: 372312331}
   - component: {fileID: 372312330}
-  - component: {fileID: 372312329}
   m_Layer: 5
-  m_Name: StartGamee
+  m_Name: StartGame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -616,19 +615,6 @@ RectTransform:
   m_AnchoredPosition: {x: 522.41, y: -462.08606}
   m_SizeDelta: {x: 673.4695, y: 90.1723}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &372312329
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 372312327}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82c331ee335b6524daac0a9a2208ebdf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startButton: {fileID: 0}
 --- !u!114 &372312330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -673,8 +659,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 372312329}
-        m_TargetAssemblyTypeName: StartGame, Assembly-CSharp
+      - m_Target: {fileID: 1660258718}
+        m_TargetAssemblyTypeName: GameRoom, Assembly-CSharp
         m_MethodName: GameStart
         m_Mode: 1
         m_Arguments:
@@ -1662,7 +1648,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 532302667}
   m_HandleRect: {fileID: 532302666}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -2070,6 +2056,7 @@ GameObject:
   - component: {fileID: 1660258717}
   - component: {fileID: 1660258716}
   - component: {fileID: 1660258715}
+  - component: {fileID: 1660258718}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -2127,6 +2114,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1660258718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1660258714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfe79fa8e46e0fff1ae6a2cf29d3e7cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startButton: {fileID: 372312330}
+  gameNameText: {fileID: 604840088}
 --- !u!1 &1669041814
 GameObject:
   m_ObjectHideFlags: 0
